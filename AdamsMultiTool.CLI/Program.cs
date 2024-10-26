@@ -1,3 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Spectre.Console;
 
-Console.WriteLine("Hello, World!");
+namespace AdamsMultiTool.CLI;
+
+internal static class Program
+{
+    private static void Main(string[] args)
+    {
+        AnsiConsole.Markup("[underline red]Hello[/] World!");
+    }
+}
