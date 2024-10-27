@@ -1,5 +1,6 @@
 ﻿using AdamsMultiTool.CLI.Commands;
 using AdamsMultiTool.CLI.Infrastructure;
+using AdamsMultiTool.Core.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Spectre.Console.Cli;
 
@@ -15,6 +16,7 @@ internal static class Program
         var services = new ServiceCollection();
 
         services.AddSingleton(TimeProvider.System);
+        services.AddSingleton<TimeService>();
         
         return services;
     }
