@@ -17,6 +17,7 @@ internal static class Program
 
         services.AddSingleton(TimeProvider.System);
         services.AddSingleton<TimeService>();
+        services.AddSingleton<NatoService>();
         
         return services;
     }
@@ -31,6 +32,8 @@ internal static class Program
             config.AddCommand<TimeCommand>("time")
                 .WithAlias("now")
                 .WithDescription("Print the current time.");
+            config.AddCommand<NatoCommand>("nato")
+                .WithDescription("Convert words to the NATO phonetic alphabet.");
         });
 
         return app;
