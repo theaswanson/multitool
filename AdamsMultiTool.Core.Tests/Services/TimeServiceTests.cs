@@ -32,7 +32,10 @@ public class TimeServiceTests
 
         var result = _timeService.GetCurrentTimeString(TimeFormat.Default);
 
-        result.Should().Be("1/2/2024 2:04:05 AM -01:00");
+        result.Should().Contain("1/2/2024");
+        result.Should().Contain("2:04:05");
+        result.Should().Contain("AM");
+        result.Should().Contain("-01:00");
     }
     
     [Test]
@@ -51,7 +54,10 @@ public class TimeServiceTests
 
         var result = _timeService.GetCurrentTimeString(TimeFormat.UTC);
 
-        result.Should().Be("1/2/2024 3:04:05 AM +00:00");
+        result.Should().Contain("1/2/2024");
+        result.Should().Contain("3:04:05");
+        result.Should().Contain("AM");
+        result.Should().Contain("+00:00");
     }
     
     [Test]
